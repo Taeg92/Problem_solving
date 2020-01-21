@@ -21,3 +21,4 @@ for i in range(test_cnt) :
 
 for i in range(0,test_cnt) :
     print('#{} {}'.format(i+1,result_list[i])) 
+    
