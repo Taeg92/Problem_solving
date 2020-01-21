@@ -1,6 +1,8 @@
 # Problem Solving
 
->### Algorithm
+>### Algorithm 
+>
+>### Python
 
 ​        
 
@@ -14,7 +16,7 @@
 
 ​          
 
-- [ ] ##### Difficulty 1
+- [ ] **Difficulty 1**
 
 ​       
 
@@ -28,7 +30,7 @@
 
 ​       
 
-- [ ] ##### Level 1
+- [ ] **Level 1**
 
 ​      
 
@@ -42,3 +44,4 @@
 
 
 
+- [ ] 1000~
