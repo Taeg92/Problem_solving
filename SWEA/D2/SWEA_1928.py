@@ -1,5 +1,5 @@
 # Proble [1928] : Base64 Decoder
-# 8 bit 문자 = > 6 bit 문자
+# 6 bit 문자 = > 8 bit 문자
 # Decoding
 
 def decode_String(string):
