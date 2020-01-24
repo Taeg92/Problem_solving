@@ -19,8 +19,6 @@ for test in range(1,test_cnt+1) :
             n_matrix[row][column] = start
             start += 1
         count -= 1
-        #if count == 0:
-        #    break
         for __ in range(count) :
             row += pos
             n_matrix[row][column] = start
@@ -32,4 +30,3 @@ for test in range(1,test_cnt+1) :
         for j in range(size) :
             print(n_matrix[i][j],end = ' ')
         print('')
-
