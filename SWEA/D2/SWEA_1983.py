@@ -16,7 +16,7 @@ for test in range(1,test_cnt+1) :
     for i in range(student_count) :
         score1, score2, socore3 = map(int,input().split())
         student_list[i] = score1*(0.35) + score2*(0.45) + socore3*(0.20)
-
+        
     sorted_list = sorted(student_list.values())
     grade = sorted_list.index(student_list[search_idx-1])
     result = grade_list[int((grade/student_count*10))]
