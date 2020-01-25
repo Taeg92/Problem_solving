@@ -17,7 +17,8 @@
 ​          
 
 - [x] **Difficulty 1**
-- [ ] **Difficulty 2**
+- [x] **Difficulty 2**
+- [ ] **Difficulty 3**
 
 ​       
 
