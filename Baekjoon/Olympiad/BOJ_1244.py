@@ -36,6 +36,6 @@ for student in student :
                 switchs[(student[1]-1)+count] = 1
             count += 1
 for idx, switch in enumerate(switchs) :
-    if idx and not(idx % 20):
+    if idx != 0 and idx % 20 == 0:
         print()
     print(switch, end = ' ')
