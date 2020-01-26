@@ -1,8 +1,7 @@
-# Problem Solving
+# :sunny:Problem Solving
 
->### Algorithm 
+>### Algorithm Practice Using Python
 >
->### Python
 
 ​        
 
