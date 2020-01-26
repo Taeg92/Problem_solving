@@ -4,20 +4,14 @@
 # 덤프 횟수는 입력으로 주어짐 1 <= count <= 1000
 
 
-for test in range(1,11) :
-    dump_val = int(input())
-    height_list = list(map(int,input().split()))
-    for __ in range(dump_val) :
-        height_list[height_list.index(height_list)] -= 1
-        height_list[height_list.index(min(height_list))] += 1
-    result = max(height_list) - min(height_list)
-    print('#{} {}'.format(test,max(height_list) - min(height_list)))
-
-
-    # for t in range(10):
-    # n = int(input())
-    # h = list(map(int, input().split()))
-    # for _ in range(n):
-    #     h[h.index(max(h))] -= 1
-    #     h[h.index(min(h))] += 1
-    # print(f'#{t+1} {max(h)-min(h)}')
+for test in range(10) :
+    d = int(input())
+    h = list(map(int, input().split()))
+    count = 0
+    while True :
+        h[h.index(max(h))] -= 1
+        h[h.index(min(h))] += 1
+        count += 1
+        if(count == d) :
+            break
+    print('#{} {}'.format(test+1,max(h)-min(h)))
