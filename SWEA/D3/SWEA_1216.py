@@ -3,7 +3,7 @@
 # 각 케이스마다 평면 글자판을 입력 받음.
 
 
-for test in range(1) :
+for test in range(10) :
     test_num = int(input())
     row = [''.join(input().split()) for _ in range(100)]
     col = [''.join(i) for i in zip(*row)]
