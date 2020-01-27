@@ -13,13 +13,13 @@ for test in range(1,11) :
     command_cnt = int(input())
     command = list(input().split())
     for _ in range(command_cnt) :
-        cmmand_val = command.pop(0)
-        if cmmand_val == 'I':
+        command_type = command.pop(0)
+        if command_type == 'I':
             start = int(command.pop(0))
             size = int(command.pop(0))
             for i in range(size) :
                 origin_password.insert(start+i,command.pop(0))
-        elif cmmand_val == 'D':
+        elif command_type == 'D':
             delete_idx = int(command.pop(0))
             delete_cnt = int(command.pop(0))
             for _ in range(delete_cnt) :
