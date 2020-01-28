@@ -20,6 +20,3 @@ for test in range(1,11) :
             break
     string = ''.join(map(str,numbers))
     print('#{} {}'.format(test,string))
-
-
-
