@@ -1,17 +1,17 @@
 # Problem [14539] : N과 M(1)
 
 def permutation(arr, r):
-    # 1.
+
     result = list()
     arr = sorted(arr)
     used = [0 for _ in range(len(arr))]
 
     def generate(chosen, used):
-        # 2.
+
         if len(chosen) == r:
             result.append(chosen[:])
 	
-	# 3.
+
         for i in range(len(arr)):
             if not used[i]:
                 chosen.append(arr[i])
