@@ -1,3 +1,5 @@
+# Problem [15651] : N과 M(3)
+
 def product(arr,r):
     for i in range(len(arr)):  
         if r == 1:  
