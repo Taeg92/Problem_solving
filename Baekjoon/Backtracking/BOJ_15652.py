@@ -1,3 +1,5 @@
+# Problem [15652] : N과 M(4)
+
 def repeat_conb(arr,r):
     for i in range(len(arr)):
         if r == 1:
