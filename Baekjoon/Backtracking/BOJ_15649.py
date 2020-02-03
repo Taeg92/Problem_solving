@@ -1,4 +1,4 @@
-# Problem [14539] : N과 M(1)
+# Problem [15649] : N과 M(1)
 
 def permutation(arr, r):
 
