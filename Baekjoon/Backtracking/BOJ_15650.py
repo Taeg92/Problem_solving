@@ -1,22 +1,14 @@
 # Problem [14539] : N과 M(2)
 
 def combination(arr, r):
+    for i in range(len(arr)):
+        if r == 1:
+            yield [arr[i]]
+        else:
+            for next in combination(arr[i+1:],r-1):
+                yield [arr[i]] + next
 
-    result = list()
-    arr = sorted(arr)
-
-    def generate(chosen):
-        if len(chosen) == r:
-            result.append(chosen[:])
-
-        start = arr.index(chosen[-1]) + 1 if chosen else 0
-        for i in range(start, len(arr)):
-            chosen.append(arr[i])
-            generate(chosen)
-            chosen.pop()
-    generate([])
-
-    return result
+    
 
 n_val, m_val = map(int, input().split())
 result = combination(range(1,n_val+1), m_val)
