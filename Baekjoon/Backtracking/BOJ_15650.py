@@ -1,4 +1,4 @@
-# Problem [14539] : N과 M(2)
+# Problem [15650] : N과 M(2)
 
 def combination(arr, r):
     for i in range(len(arr)):
