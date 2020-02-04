@@ -4,24 +4,20 @@
 # 죽은 파리의 최대 개수를 구하라.
 
 
-def numFly(arr,map_size,flapper_size):  
+def numFly(arr,N,M):  
     result = list()
-    for start_point_width in range(0,map_size-flapper_size+1):
-        for start_point_height in range(0,map_size-flapper_size+1):
-            sum_rec = 0
-            for rec_width in range (flapper_size):
-                for rec_height in range(flapper_size):
-                    sum_rec += arr[start_point_width+rec_width][start_point_height+rec_height]
-            result.append(sum_rec)
-
+    for i in range(N-M+1):
+        for j in range(N-M+1):
+            s = 0
+            for k in range (M):
+                s += sum(arr[i+k][j:j+M])
+            result.append(s)
     return max(result)
 
-test_cnt = int(input())   
+T = int(input())   
 
-for test in range(1, test_cnt+1):
-
-    map_size, flapper_size = map(int,input().split())
-    matrix = [list(map(int,input().split())) for _ in range(map_size)]
-    result = numFly(matrix,map_size,flapper_size)
-
-    print('#{} {}'.format(test,result))
+for tc in range(1, T+1):
+    N, M = map(int,input().split())
+    d = [list(map(int,input().split())) for _ in range(N)]
+    result = numFly(d,N,M)
+    print('#{} {}'.format(tc,result))
