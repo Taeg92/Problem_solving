@@ -9,22 +9,26 @@ def is_Increase(n):
         if not n % 10 <= r:
             return False
     return True
-
-def find_max(arr) :
-    m = 0
-    for i in range(N-1):
-        for j in range(i+1,N):
-            if is_Increase(data[i]*data[j]):
-                if m < data[i]*data[j]:
-                    m = data[i]*data[j]
-    if m == 0:
-        return -1 
-    return m
-
-
+ 
+ 
+def recursion(arr,n):
+    global m
+    if n == N and m == 0:
+        m = -1
+    elif n == N and m != 0:
+        return
+    else:
+        for i in range(n+1,N):
+            if is_Increase(arr[n]*arr[i]) and arr[n]*arr[i] > m :
+                m = arr[n]*arr[i]
+                break
+        recursion(arr,n+1) 
+ 
+ 
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     data = sorted(list(map(int, input().split())),reverse=True)
-    result = find_max(data)
-    print('#{} {}'.format(tc,result))
+    m = 0
+    recursion(data,0)
+    print('#{} {}'.format(tc,m))
