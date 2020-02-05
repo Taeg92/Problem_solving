@@ -1,4 +1,5 @@
 #Problem [9633] : N-Queen
+result = 0
 
 def isTrue(n):
     for past_idx in range(n):
@@ -19,6 +20,5 @@ def Queen(n):
 
 N = int(input())
 row = [0]*15
-result = 0
 Queen(0)
 print(result)
