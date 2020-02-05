@@ -23,20 +23,26 @@ def find_zero(sudoku) :
      result = [[i,j] for i in range(9) for j in range(9) if sudoku[i][j] == 0]
      return result
 
-
-def solve_sudoku(sudoku,zero):
-    for i in range(len(zero)):
-        if len(zero) == 0:
-            return sudoku
-        else:
-            if len(find_answer(sudoku,zero[i][0],zero[i][1])) == 1:
-                x, y = zero.pop(i)
-                sudoku[x][y] = find_answer(sudoku,x,y)[0]
-                solve_sudoku(sudoku,zero)       
+flag = False
+def dfs(n):
+    global flag
+    if n == len(zero):
+        flag = True
+        for line in sudoku:
+            print(' '.join(map(str,line)))
+        return
+    if flag:
+        return
+    else:
+        x, y = zero[n]
+        if find_answer(sudoku,x,y):
+            answer_list = find_answer(sudoku,x,y)
+            for answer in answer_list:
+                sudoku[x][y] = answer
+                dfs(n+1)
+                sudoku[x][y] = 0
+   
 
 sudoku = [list(map(int,input().split())) for _ in range(9)]
 zero = find_zero(sudoku)
-result = solve_sudoku(sudoku,zero)
-
-for line in result:
-    print(' '.join(map(str,line)))
+dfs(0)
