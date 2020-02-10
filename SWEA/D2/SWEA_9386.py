@@ -8,4 +8,5 @@ for tc in range(1, T+1):
     for data in d:
         if len(data) > m:
             m = len(data)
+            
     print('#{} {}'.format(tc,m))
