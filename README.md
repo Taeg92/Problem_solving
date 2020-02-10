@@ -20,6 +20,7 @@
 - [ ] **Difficulty 3**
 - [ ] **Difficulty 4**
 - [ ] **Difficulty 5**
+- [ ] **Difficulty 6**
 
 ​       
 
