@@ -1,5 +1,6 @@
 # Problem [2564] : 경비원
 # 1 => 북  ,  2 => 남  ,  3 =>  서 , 4 => 동
+
 w, h = map(int,input().split())
 N = int(input())
 data = [list(map(int,input().split())) for _ in range(N)]
