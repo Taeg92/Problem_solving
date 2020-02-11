@@ -8,7 +8,7 @@ for tc in range(1, T+1):
     for i in range(N//2+1): 
         for j in range(N//2-i,i+N//2+1): 
             s += data[i][j]
-    for i in range(N//2+1,N):  
+    for i in range(N-1, N//2, -1):  
         for j in range(i-N//2, N//2+N-i):
             s += data[i][j]
     
