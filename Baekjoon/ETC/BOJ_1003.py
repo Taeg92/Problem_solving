@@ -29,3 +29,4 @@ for test in range(test_cnt):
     one_count = 0
     zero_count, one_count = fibonacci(n)
     print('{} {}'.format(zero_count,one_count))
+    
