@@ -1,4 +1,5 @@
 # Problem[1002] : 터렛
+
 import math
 
 test_cnt = int(input())
