@@ -20,4 +20,3 @@ for test in range(test_cnt) :
         elif(x1-c_x)**2 + (y1-c_y)**2 <= r**2 and (x2-c_x)**2 + (y2-c_y)**2 > r**2 :
             count += 1
     print(count)
-            
