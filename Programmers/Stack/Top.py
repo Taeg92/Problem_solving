@@ -5,7 +5,7 @@ from collections import deque
 def solution(heights):
     answer = deque()
     flag = 0
-    for i in range(len(heights)-1,-1,-1):
+    for i in range(len(heights)-1,0,-1):
         flag = 0
         for j in range(i-1,-1,-1):
             if heights[i] < heights[j]:
