@@ -19,4 +19,19 @@ for tc in range(1,T+1):
         if flag == 0 and i >= len(data) - 1:
             break
     print('#{} {}'.format(tc,len(data))) 
-            
+
+
+# T = int(input())
+
+# for tc in range(1,T+1):
+#     stack = []
+#     D = input()
+#     for c in D:
+#         if not stack:
+#             if stack[-1] == c:
+#                 stack.pop()
+#             else:
+#                 stack.append(c)
+#         else:
+#             stack.append(c)
+#     print('{}'.format(tc,len(stack)))
