@@ -3,16 +3,21 @@ def solution(progresses, speeds):
 
     answer = []
     t = 0
-    while progresses:
+    while 1:
         t += 1
-        i = 0
-        for _ in range(len(progresses)):
-            if progresses[i] - speeds[i]*t <= 0:
-                progresses.pop(i)
-                speeds.pop(i)
-                i -= 1
-            else :
-                i += 1
+        cnt = 0
+        for i in range(len(progresses)):
+            if progresses[i] != 0 and speeds[i] != 0:
+                if progresses[i] + speeds[i]*t < 100:
+                    break    
+                else:    
+                    cnt += 1
+                    progresses[i] = 0
+                    speeds[i] = 0
+        if cnt > 0:
+            answer.append(cnt)
+        if sum(progresses) == 0:
+            break
     return answer
 
 progresses = [93, 30, 55]
