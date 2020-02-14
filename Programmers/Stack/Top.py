@@ -18,6 +18,22 @@ def solution(heights):
     
     return list(answer)
 
+
+# code 1
+# def solution(heights):
+#     answer = []
+#     for i in range(len(heights)):
+#         stack = []
+#         for j in range(i):
+#             if heights[i] < heights[j]:
+#                 stack.append(j+1)
+#         if len(stack) != 0:
+#             answer.append(stack.pop())
+#         else:
+#             answer.append(0)
+#     return answer
+
+# code 2
 # def solution(h):
 #     ans = [0] * len(h)
 #     for i in range(len(h)-1, 0, -1):
