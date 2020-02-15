@@ -1,23 +1,24 @@
 # Problem [1074] : Z
+import sys
 
-def recursion_Z(r, c):
-    
+n = 0
+def recursion_Z(x, y, size):
+    global n
     # 종료조건
-    if r == 0 and c == 0:
-        return 0
+    if x == r and y == c:
+        print(n)
+        return
 
     # 재귀
+    if x <= r < x + size and y <= c < y + size:
+        recursion_Z(x,y,size//2)
+        recursion_Z(x,y+size//2,size//2)
+        recursion_Z(x+size//2,y,size//2)
+        recursion_Z(x+size//2,y+size//2,size//2)
     else:
-        if r % 2 == 1:
-            if c % 2 == 1:
-                return recursion_Z()
-            else:
-        else:
-            if c % 2 == 1:
-
+        n += size*size
 
 
 
 N, r, c = map(int, input().split())
-result = recursion_Z(r,c)
-print(result)
+recursion_Z(0,0,2**N)
