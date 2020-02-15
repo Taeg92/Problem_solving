@@ -6,6 +6,7 @@ def recursion_Z(r, c):
     if r == 0 and c == 0:
         return 0
 
+    # 재귀
     else:
         if r % 2 == 1:
             if c % 2 == 1:
