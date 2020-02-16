@@ -21,10 +21,10 @@ for tc in range(1,T+1):
             break
         else:
             q = queue.pop(0)
+            result.append(q)
             for i in range(1,V+1):
                 if graph[i][q] == 1:
                     graph[i][q] = 0
                     if 1 not in graph[i]:
                         queue.append(i)
-            result.append(q)
     print('#{} {}'.format(tc,' '.join(map(str,result))))
