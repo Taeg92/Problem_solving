@@ -36,6 +36,4 @@ while 1:
             if data[i][j] == 1 and not check[i][j]:
                 BFS(i,j)
                 cnt += 1
-    
     print(cnt)
-    
