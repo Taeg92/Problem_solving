@@ -1,8 +1,8 @@
 # Problem [14889] : 스타트와 링크
 
 from itertools import combinations as combi
-# import sys
-# sys.stdin = open('input.txt')
+import sys
+sys.stdin = open('input.txt')
 
 if __name__ == '__main__':
 
