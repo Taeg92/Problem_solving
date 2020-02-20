@@ -16,7 +16,6 @@ def DFS(v,d,t):
             DFS(i+1,dist,t+T[i])
             check[i] = 0
 
-
 if __name__ == '__main__':
     dist = int(input())
     N = int(input())
