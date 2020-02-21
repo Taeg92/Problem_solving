@@ -1,8 +1,10 @@
 # Problem [2651] : 자동차경주대회
 
 import sys
-# sys.stdin = open('input.txt')
+sys.stdin = open('input.txt')
+
 m = sys.maxsize
+
 def DFS(v,d,t):
     global m
     if d < 0 :
