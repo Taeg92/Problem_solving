@@ -10,6 +10,7 @@ dy = [0, 1, 0, -1]
 
 # 구역 나누기
 def DFS(x,y,n):
+    D[x][y] = n
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
