@@ -1,15 +1,18 @@
 # Problem [15652] : N과 M(4)
 
-def repeat_conb(arr,r):
-    for i in range(len(arr)):
-        if r == 1:
-            yield [arr[i]]
-        else:
-            for next in repeat_conb(arr[i:],r-1):
-                yield [arr[i]] + next
+import sys
+sys.stdin = open('input.txt')
 
+def repeat_conbi(arr, n, s):
+    if n == M:
+        print(*result)
+    else:
+        for i in range(s,N):
+            result.append(arr[i])
+            repeat_conbi(arr,n+1,i)
+            result.pop()
 
-N, M = map(int,input().split())
-result = list(repeat_conb(range(1,N+1),M))
-for n in result:
-    print(' '.join(map(str,n)))
+if __name__ == "__main__":
+    N, M = map(int,input().split())
+    result = list()
+    repeat_conbi(range(1,N+1),0,0)
