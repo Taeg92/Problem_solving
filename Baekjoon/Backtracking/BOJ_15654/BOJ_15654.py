@@ -1,29 +1,25 @@
 # Problem [15654] : N과 M(5)
 
-def permutation(arr, r):
+import sys
+sys.stdin = open('input.txt')
 
+def permutation(arr, n):
+    
+    if n == M:
+        print(*result)
+        return
+    else:
+        for i in range(N):
+            if not C[i]:
+                C[i] = 1
+                result.append(D[i])
+                permutation(arr,n+1)
+                result.pop()
+                C[i] = 0
+
+if __name__ == "__main__":
+    N, M = map(int, input().split())
+    D = sorted(list(map(int,input().split())))
+    C = [0]*N
     result = list()
-    arr = sorted(arr)
-    used = [0 for _ in range(len(arr))]
-
-    def generate(chosen, used):
-
-        if len(chosen) == r:
-            result.append(chosen[:])
-	
-
-        for i in range(len(arr)):
-            if not used[i]:
-                chosen.append(arr[i])
-                used[i] = 1
-                generate(chosen, used)
-                used[i] = 0
-                chosen.pop()
-    generate([], used)
-    return result
-
-N, M = map(int, input().split())
-d = sorted(list(map(int,input().split())))
-result = permutation(d, M)
-for i in result:
-    print(' '.join(map(str,i)))
+    permutation(D, 0)
