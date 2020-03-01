@@ -1,16 +1,24 @@
 # Problem [15650] : N과 M(2)
 
-def combination(arr, r):
-    for i in range(len(arr)):
-        if r == 1:
-            yield [arr[i]]
-        else:
-            for next in combination(arr[i+1:],r-1):
-                yield [arr[i]] + next
+import sys
+sys.stdin = open('input.txt')
 
-    
+def combination(arr, n, s):
 
-n_val, m_val = map(int, input().split())
-result = combination(range(1,n_val+1), m_val)
-for i in result:
-    print(' '.join(map(str,i)))
+    if n == M:
+        print(*result)
+        return
+    else:
+        for i in range(s, N):
+            if not C[i]:
+                C[i] = 1
+                result.append(arr[i])
+                combination(arr,n+1,i+1)
+                result.pop()
+                C[i] = 0
+
+if __name__ == "__main__":
+    N, M = map(int,input().split())
+    C = [0]*N
+    result = list()
+    combination(range(1,N+1), 0, 0)
