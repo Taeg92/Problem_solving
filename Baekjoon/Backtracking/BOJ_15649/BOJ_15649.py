@@ -19,7 +19,6 @@ def permutation(arr, r):
                 result.pop()
                 C[i] = 0
 
-
 if __name__ == "__main__":
     N, M = map(int,input().split())
     C = [0]*(N)
