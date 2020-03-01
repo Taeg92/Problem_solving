@@ -4,6 +4,7 @@ import sys
 sys.stdin = open('input.txt')
 
 def product(arr, r):
+
     if r == M:
         print(*result)
         return
