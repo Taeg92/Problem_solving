@@ -4,7 +4,6 @@ import sys
 sys.stdin = open('input.txt')
 
 def permutation(arr, n):
-    
     if n == M:
         print(*result)
         return
