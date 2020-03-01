@@ -4,7 +4,6 @@ import sys
 sys.stdin = open('input.txt')
 
 def combination(arr, n, s):
-
     if n == M:
         print(*result)
         return
