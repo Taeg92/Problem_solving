@@ -12,12 +12,13 @@ def DFS(n, v):
     else:
         DFS(n+1,v)
         DFS(n+1,v+D[n])
-         
-T = int(input())
-for tc in range(1, T+1):
-    N = int(input())
-    D = tuple(map(int,input().split()))
-    s = sum(D)
-    C = [[0]*(s+1) for _ in range(N+1)]
-    DFS(0,0)  
-    print('#{} {}'.format(tc, sum(C[N])))
+
+if __name__ == "__main__":  
+    T = int(input())
+    for tc in range(1, T+1):
+        N = int(input())
+        D = tuple(map(int,input().split()))
+        s = sum(D)
+        C = [[0]*(s+1) for _ in range(N+1)]
+        DFS(0,0)  
+        print('#{} {}'.format(tc, sum(C[N])))
