@@ -40,7 +40,7 @@ def move(arr, dir):
 
 def DFS(n,arr):
     global m
-    if n == N:
+    if n == 5:
         for col in arr:
             m = max(m,max(col))
         return
