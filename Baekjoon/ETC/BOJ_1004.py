@@ -13,10 +13,11 @@ for test in range(test_cnt) :
     count = 0
     for i in range(n) :
         c_x, c_y, r = map(int,input().split())
-        if (x1-c_x)**2 + (y1-c_y)**2 <= r**2 and (x2-c_x)**2 + (y2-c_y)**2 <= r**2 :
+
+        dist1 = ((x1-c_x)**2 + (y1-c_y)**2)**(1/2)
+        dist2 = ((x2-c_x)**2 + (y2-c_y)**2)**(1/2)
+
+        if (dist1 < r and dist2 > r) or ( dist1 > r and dist2 < r) :
             count += 1 
-        elif(x1-c_x)**2 + (y1-c_y)**2 > r**2 and (x2-c_x)**2 + (y2-c_y)**2 <= r**2 :
-            count += 1
-        elif(x1-c_x)**2 + (y1-c_y)**2 <= r**2 and (x2-c_x)**2 + (y2-c_y)**2 > r**2 :
-            count += 1
+
     print(count)
