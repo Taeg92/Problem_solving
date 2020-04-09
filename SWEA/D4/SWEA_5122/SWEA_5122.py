@@ -1,64 +1,97 @@
+# problem [5122] : 수열 편집
+
+import sys
+sys.stdin = open('input.txt')
+
 class Node:
-    def __init__(self, data):
-        self.data = data
-        self.link = None
+    def __init__(self, value):
+        self.value = value
+        self.next = None
         
-class LinkedList:
-    def __init__(self):
-        new_node = Node('head')
-        self.head = new_node
-        self.tail = new_node
-        
-        self.before = None
-        self.current = None
-        
-    def append(self, data):
-        new_node = Node(data)
-        self.tail.link = new_node
-        self.tail = new_node
-        
-    def move_to(self,D):
-        self.current = self.head.link
-        self.before = self.head
-        for _ in range(D):
-            if self.current == None:
-                return False  # 실패
-            self.before = self.current
-            self.current = self.current.link
-        return True  # 성공
-        
-    def insert(self, idx, data):
-        new_node = Node(data)
-        self.move_to(idx)
-        self.before.link = new_node
-        new_node.link = self.current
+class LinkedList():
+
+    length = 0
+
+    def __init__(self, head = None):
+        self.head = head
+        self.next = None
     
-    def delete(self, idx):
-        self.move_to(idx)
-        self.before.link = self.current.link
-
-    def change(self, idx, data):
-        self.move_to(idx)
-        self.current.data = data
-
-    def my_result(self, idx):
-        if self.move_to(idx):
-            return self.current.data
+    def append(self, item):
+        current = self.head
+        if not self.head:
+            self.head = item
         else:
-            return -1
+            while current.next:
+                current = current.next
+            current.next = item
+        self.length += 1
+    
+    def show(self):
+        current = self.head
+        result = list()
+        if not self.head:
+            result.append('None')
+        else:
+            while current.next:
+                result.append(str(current.value))
+                current = current.next
+            result.append(str(current.value))
+        return print(' '.join(result))
+    
+    def insert(self, idx, item):
+        current = self.head
+        for i in range(idx-1):
+            current = current.next
+        item.next = current.next
+        current.next = item
+        self.length += 1
+            
+    def delete(self, idx):
+        data = int(self.getData(idx))
+        if self.head.value == data:
+            self.head = self.head.next
+        else:
+            temp = self.head
+            while temp.next.value != data:
+                temp = temp.next
+            temp.next = temp.next.next
+        self.length -= 1
+    
+    def getData(self, idx):
+        if idx == 0:
+            return f'{self.head.value}'
+        else:
+            cur = self.head
+            for _ in range(idx):
+                cur = cur.next
+            return f'{cur.value}'
+    
+    def change(self, idx, item):
+        if idx == 0:
+            self.head.value = item
+        else:
+            cur = self.head
+            for _ in range(idx):
+                cur = cur.next
+            cur.value = item
 
 T = int(input())
-for test_case in range(1, 1 + T):
+for tc in range(1, T+1):
     N, M, L = map(int, input().split())
-    Seq = LinkedList()
+    l = LinkedList()
     for i in map(int, input().split()):
-        Seq.append(i)
+        l.append(Node(i))
     for _ in range(M):
-        data = list(input().split())
-        if data[0] == 'I':
-            Seq.insert(int(data[1]), int(data[2]))
-        elif data[0] == 'D':
-            Seq.delete(int(data[1]))
-        elif data[0] == 'C':
-            Seq.change(int(data[1]), int(data[2]))
-    print('#{} {}'.format(test_case, Seq.my_result(L)))
+        D = list(input().split())
+        if D[0] == 'I':
+            l.insert(int(D[1]), Node(int(D[2])))
+        elif D[0] == 'D':
+            l.delete(int(D[1]))
+        elif D[0] == 'C':
+            l.change(int(D[1]), int(D[2]))
+    result = 0
+    if l.length < L:
+        result = -1
+    else:
+        result = l.getData(L)
+    print('#{} {}'.format(tc, result))
