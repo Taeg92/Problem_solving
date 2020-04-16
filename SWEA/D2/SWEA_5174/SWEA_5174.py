@@ -1,5 +1,8 @@
 # Problem [5174] : subtree
 
+import sys
+sys.stdin = open('input.txt')
+
 class Node:
     def __init__(self, data):
         self.left = None
