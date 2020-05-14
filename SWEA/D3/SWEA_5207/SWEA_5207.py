@@ -35,4 +35,4 @@ if __name__ == "__main__":
                         break
                     flag = -1
 
-        print('#{} {}'.format(T, cnt))
+        print('#{} {}'.format(tc, cnt))
