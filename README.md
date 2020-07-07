@@ -17,10 +17,10 @@
 
 - [x] **Difficulty 1**
 - [x] **Difficulty 2**
-- [ ] **Difficulty 3**
-- [ ] **Difficulty 4**
-- [ ] **Difficulty 5**
-- [ ] **Difficulty 6**
+- [x] **Difficulty 3**
+- [x] **Difficulty 4**
+- [x] **Difficulty 5**
+- [x] **Difficulty 6**
 
 ​       
 
@@ -34,9 +34,9 @@
 
 ​       
 
-- [ ] **Level 1**
-- [ ] **Level 2**
-- [ ] **Level 3**
+- [x] **Level 1**
+- [x] **Level 2**
+- [x] **Level 3**
 
 ​      
 
@@ -50,4 +50,4 @@
 
 ​          
 
-- [ ] 1000~
+- [x] 1000~
