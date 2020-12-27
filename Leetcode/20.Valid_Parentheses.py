@@ -16,12 +16,12 @@ class Solution(object):
                     return False
             else:
                 stack.append(char)
-        return True
+        return len(stack) == 0
 
 
 sol = Solution()
 
 s = "(){}}{"
-# Output: true
+# Output: False
 
 print(sol.isValid(s))
