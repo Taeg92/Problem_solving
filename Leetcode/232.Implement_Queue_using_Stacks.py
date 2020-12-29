@@ -20,7 +20,7 @@ class MyQueue(object):
         :rtype: int
         """
         if self.queue:
-            return self.queue.pop()
+            return self.queue.pop(0)
         return 0
 
     def peek(self):
