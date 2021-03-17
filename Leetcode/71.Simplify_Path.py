@@ -6,7 +6,6 @@ class Solution(object):
         """
         path = path.split("/")
         stack = []
-        print(path)
 
         for el in path:
             if el == "..":
@@ -14,7 +13,6 @@ class Solution(object):
                     stack.pop()
             elif el and el != ".":
                 stack.append(el)
-            print(stack)
 
         return "/" + "/".join(stack)
 
