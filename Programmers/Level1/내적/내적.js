@@ -2,7 +2,6 @@ function solution(a, b) {
   const size = a.length;
   let answer = 0;
   for (let i = 0; i < size; i++) {
-    console.log(a[i], b[i]);
     answer += a[i] * b[i];
   }
   return answer;
