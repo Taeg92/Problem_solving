@@ -15,7 +15,7 @@ def solution(cacheSize, cities):
             buffer.remove(city)
         else:
             answer += 5
-            if len(buffer) >= cacheSize:
+            if len(buffer) == cacheSize:
                 buffer.popleft()
 
         buffer.append(city)
