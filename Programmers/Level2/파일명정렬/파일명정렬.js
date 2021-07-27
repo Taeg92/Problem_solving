@@ -10,6 +10,7 @@ function solution(files) {
     }
     const numberA = a.match(/\d+/)[0].replace(/^0+/, "");
     const numberB = b.match(/\d+/)[0].replace(/^0+/, "");
+
     return numberA - numberB;
   });
 }
