@@ -18,5 +18,5 @@ def solution(n):
     return sum(answer, [])
 
 
-n = 4
+n = 5
 print(solution(n))
