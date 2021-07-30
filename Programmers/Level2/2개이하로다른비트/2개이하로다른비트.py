@@ -15,4 +15,5 @@ def solution(numbers):
 
 
 numbers = [2, 7]
+
 print(solution(numbers))
