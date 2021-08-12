@@ -17,5 +17,6 @@ class Solution(object):
 nums = [3, 2, 2, 3]
 val = 3
 # Output : 2
+
 sol = Solution()
 print(sol.removeElement(nums, val))
