@@ -4,20 +4,15 @@ class Solution(object):
         :type num: int
         :rtype: str
         """
-
-        num_table = {1000: 'M', 900: 'CM', 500: 'D', 400: 'CD', 100: 'C',
-                     90: 'XC', 50: 'L', 40: 'XL', 10: 'X', 9: 'IX', 5: 'V', 4: 'IV', 1: 'I'}
-
-        result = ""
-
-        while num > 0:
-            for val in num_table:
-                if num - val >= 0:
-                    result += num_table[val]
-                    num -= val
-                    break
-
-        return result
+        roman_num = ''
+        num_list = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        roman_num_list = ['M', 'CM', 'D', 'CD', 'C',
+                          'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+        for i in range(len(num_list)):
+            while num >= num_list[i]:
+                num -= num_list[i]
+                roman_num += roman_num_list[i]
+        return roman_num
 
 
 num = 1994
