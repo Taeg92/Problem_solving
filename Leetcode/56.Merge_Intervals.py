@@ -21,6 +21,6 @@ class Solution(object):
 
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
 # Output : [[1,6],[8,10],[15,18]]
-
 sol = Solution()
+
 print(sol.merge(intervals))
