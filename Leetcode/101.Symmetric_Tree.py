@@ -32,5 +32,5 @@ class Solution(object):
         return True
 
 
-# root = [1, 2, 2, 3, 4, 4, 3]
+root = [1, 2, 2, 3, 4, 4, 3]
 # Output: true
