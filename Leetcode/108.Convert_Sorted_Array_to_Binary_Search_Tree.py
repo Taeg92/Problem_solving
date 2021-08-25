@@ -24,5 +24,5 @@ class Solution(object):
         return root
 
 
-# nums = [1, 3]
+nums = [1, 3]
 # Output : [3, 1]
